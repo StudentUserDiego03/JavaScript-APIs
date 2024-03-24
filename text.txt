@@ -1,1 +1,1 @@
-Hello.
+Account registration demo.

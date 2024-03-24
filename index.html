@@ -1,25 +1,66 @@
 <!DOCTYPE HTML>
 
 <head>
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
     <script src="app.js"></script>
+    <script src="background.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+<header>
+<h1 id="demo"></h1>
+</header>
+
 <p>Input Age</p>
 <input id="age" type="number" min="18" max="100" required><br>
 <button onclick="myFunction()">Submit</button>
 <p id="message"></p>
 
-<div>
+
     <p>Input Full Name</p>
     <input id="fullName" type="text" value=""><br>
      <button onclick="register()">Submit</button>
+
+<div id="account-display">     
     <p id="account"></p>
+
+
+</p>Let service have access to your location?</p>
+<button onclick="agree()">agree</button>
+<p id="display-location"></p>
+
 </div>
 
-<div>
-    <p id="demo"></p>
-</div>
+<br>
+
+<a href="next.html">next page</a>
+
+<script>
+    const locationDisplay = document.getElementById("display-location"); 
+
+function agree(){
+    if (navigator .geolocation){
+        navigator .geolocation.getCurrentPosition(showlocation);
+    }
+    else{
+        locationDisplay.innerHTML="Geolocation not present";
+    }
+}
+
+function showlocation(position){
+    locationDisplay.innerHTML= "L: " + position.coords.latitude +
+    "<br>L: "+ position.coords.longitude;
+}
+    </script>
+
+
+
 
 
 </body>
