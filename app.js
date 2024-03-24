@@ -15,7 +15,7 @@ function register(){
     const FullnameInput = document.getElementById("fullName").value;
     localStorage.setItem("name", FullnameInput);
     document.getElementById("account").innerHTML=localStorage.getItem("name");
-    console.log("user: " + localStorage.getItem("name"));
+    
 }
 
 getText ("text.txt");
@@ -32,3 +32,7 @@ function back(){
     window.history.back();
 }
 
+function Sign_In(){
+document.getElementById("account-display2").innerHTML= "Welcome back " + localStorage.getItem("name");
+document.getElementById("account-window").innerHTML="Account name: " + localStorage.getItem("name");
+}
